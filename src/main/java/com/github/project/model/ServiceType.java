@@ -3,7 +3,6 @@ package com.github.project.model;
 import java.math.BigDecimal;
 
 public enum ServiceType {
-
     INSTRUCTOR (BigDecimal.valueOf(300.00)),
     SKI(BigDecimal.valueOf(60.00));
 
