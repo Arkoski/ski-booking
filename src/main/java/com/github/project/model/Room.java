@@ -17,5 +17,35 @@ public class Room {
 
     private BigDecimal price;
 
+    public Room() {
+    }
 
+    public Room(Integer roomSize, BigDecimal price) {
+        this.roomSize = roomSize;
+        this.price = price;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getRoomSize() {
+        return roomSize;
+    }
+
+    public void setRoomSize(Integer roomSize) {
+        this.roomSize = roomSize;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 }

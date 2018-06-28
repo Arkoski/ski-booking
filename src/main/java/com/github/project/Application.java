@@ -31,7 +31,7 @@ public class Application {
                 .directModelSubstitute(LocalTime.class, String.class)
                 .directModelSubstitute(ZonedDateTime.class, String.class)
                 .select()
-                .paths(regex("/api/.*"))
+                .paths(regex("/.*"))
                 .build();
     }
 }
