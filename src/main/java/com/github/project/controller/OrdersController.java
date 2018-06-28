@@ -1,8 +1,8 @@
 package com.github.project.controller;
 
-import com.github.project.dto.OrdersDTO;
-import com.github.project.model.Orders;
-import com.github.project.service.OrdersService;
+import com.github.project.dto.OrderDTO;
+import com.github.project.model.Order;
+import com.github.project.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,41 +13,37 @@ import java.util.Set;
 @RequestMapping("/orders")
 public class OrdersController {
 
-    private OrdersService ordersService;
+    private OrderService orderService;
 
     @Autowired
-    public OrdersController(OrdersService ordersService) {
-        this.ordersService = ordersService;
+    public OrdersController(OrderService orderService) {
+        this.orderService = orderService;
     }
 
 
     @GetMapping("/{id}")
-    public Orders findOneById(@PathVariable Long id){
-        Orders orders = ordersService.findById(id);
-        return orders;
+    public Order findOneById(@PathVariable Long id) {
+        return orderService.findById(id);
     }
 
     @PostMapping
-    public Orders create(@RequestBody OrdersDTO order){
-        Orders orders = ordersService.createOrder(order);
-        return orders;
+    public OrderDTO create(@RequestBody OrderDTO orderDTO) {
+        return orderDTO;
     }
 
 
     @DeleteMapping("/{id}")
-    public void deleteOrder(@PathVariable Long id){
-        ordersService.deleteOrder(id);
+    public void deleteOrder(@PathVariable Long id) {
+        orderService.deleteOrder(id);
     }
 
 
     @GetMapping
-    public Set<Orders> findAll(){
-        Set<Orders> result = new HashSet<>();
+    public Set<Order> findAll() {
 
-        Set<Orders> all = ordersService.findAll();
-        all.forEach(b -> result.add(b));
+        Set<Order> all = orderService.findAll();
 
-        return result;
+        return new HashSet<>(all);
     }
 
 }

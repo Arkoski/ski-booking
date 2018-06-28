@@ -14,7 +14,7 @@ public class Client {
     private String surname;
 
     @OneToMany(mappedBy = "client")
-    private Set<Orders> orders;
+    private Set<Order> orders;
 
     @OneToMany(mappedBy = "client")
     private Set<AnotherService> anotherServices;
@@ -22,7 +22,7 @@ public class Client {
     public Client() {
     }
 
-    public Client(String name, String surname, Set<Orders> orders, Set<AnotherService> anotherServices) {
+    public Client(String name, String surname, Set<Order> orders, Set<AnotherService> anotherServices) {
         this.name = name;
         this.surname = surname;
         this.orders = orders;
@@ -53,11 +53,11 @@ public class Client {
         this.surname = surname;
     }
 
-    public Set<Orders> getOrders() {
+    public Set<Order> getOrders() {
         return orders;
     }
 
-    public void setOrders(Set<Orders> orders) {
+    public void setOrders(Set<Order> orders) {
         this.orders = orders;
     }
 

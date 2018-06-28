@@ -2,12 +2,11 @@ package com.github.project.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-@Entity
-public class Orders {
+@Entity(name = "Orders")
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,13 +25,13 @@ public class Orders {
 
     private BigDecimal bookPrice;
 
-    public Orders() {
+    public Order() {
     }
 
-    public Orders(Client client, Room room, Timestamp bookDate, Timestamp bookFrom, Timestamp bookTo, boolean bookPaid, BigDecimal bookPrice) {
+    public Order(Client client, Room room, Timestamp bookDate, Timestamp bookFrom, Timestamp bookTo, boolean bookPaid, BigDecimal bookPrice) {
         this.client = client;
         this.room = room;
-        this.bookDate = bookDate;
+        this.bookDate = Timestamp.valueOf(LocalDateTime.now());
         this.bookFrom = bookFrom;
         this.bookTo = bookTo;
         this.bookPaid = bookPaid;

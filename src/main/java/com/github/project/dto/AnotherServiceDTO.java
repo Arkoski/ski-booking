@@ -6,16 +6,11 @@ import com.github.project.model.ServiceType;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 public class AnotherServiceDTO {
-
-
     private Timestamp rentFrom;
     private Timestamp rentTo;
-
 
     private Client client;
 
@@ -47,7 +42,6 @@ public class AnotherServiceDTO {
     public void setRentTo(Timestamp rentTo) {
         this.rentTo = rentTo;
     }
-
 
     public Client getClient() {
         return client;

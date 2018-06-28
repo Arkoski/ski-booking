@@ -23,32 +23,28 @@ public class AnotherServiceController {
 
 
     @GetMapping("/{id}")
-    public AnotherService findOneById(@PathVariable Long id){
-        AnotherService anotherService = anotherServiceService.findById(id);
-        return anotherService;
+    public AnotherService findOneById(@PathVariable Long id) {
+        return anotherServiceService.findById(id);
     }
 
     @PostMapping
-    public AnotherService create(@RequestBody AnotherServiceDTO another){
-        AnotherService anotherService = anotherServiceService.createAnotherService(another);
-        return anotherService;
+    public AnotherService create(@RequestBody AnotherServiceDTO another) {
+        return anotherServiceService.createAnotherService(another);
     }
 
 
     @DeleteMapping("/{id}")
-    public void deleteOrder(@PathVariable Long id){
+    public void deleteOrder(@PathVariable Long id) {
         anotherServiceService.deleteAnotherService(id);
     }
 
 
     @GetMapping
-    public Set<AnotherService> findAll(){
-        Set<AnotherService> result = new HashSet<>();
+    public Set<AnotherService> findAll() {
 
         Set<AnotherService> all = anotherServiceService.findAll();
-        all.forEach(b -> result.add(b));
 
-        return result;
+        return new HashSet<>(all);
     }
 
 
