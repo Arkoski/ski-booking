@@ -3,7 +3,6 @@ package com.github.project.controller;
 import com.github.project.dto.ClientDTO;
 import com.github.project.model.Client;
 import com.github.project.service.ClientService;
-import com.github.project.service.implementation.ClientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
