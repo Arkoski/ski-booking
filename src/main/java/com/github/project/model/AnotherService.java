@@ -1,6 +1,8 @@
 package com.github.project.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,24 +15,27 @@ public class AnotherService {
     @ManyToOne
     private Client client;
 
-    private LocalDateTime ordersDate;
-    private LocalDateTime rentFrom;
-    private LocalDateTime rentTo;
+    private Timestamp rentDate;
+    private Timestamp rentFrom;
+    private Timestamp rentTo;
 
     private ServiceType serviceType;
 
     private boolean servicePaid;
 
+    private BigDecimal servicePrice;
+
     public AnotherService() {
     }
 
-    public AnotherService(Client client, LocalDateTime ordersDate, LocalDateTime rentFrom, LocalDateTime rentTo, ServiceType serviceType, boolean servicePaid) {
+    public AnotherService(Client client, Timestamp rentDate, Timestamp rentFrom, Timestamp rentTo, ServiceType serviceType, boolean servicePaid, BigDecimal servicePrice) {
         this.client = client;
-        this.ordersDate = ordersDate;
+        this.rentDate = rentDate;
         this.rentFrom = rentFrom;
         this.rentTo = rentTo;
         this.serviceType = serviceType;
         this.servicePaid = servicePaid;
+        this.servicePrice = servicePrice;
     }
 
     public Long getId() {
@@ -49,27 +54,27 @@ public class AnotherService {
         this.client = client;
     }
 
-    public LocalDateTime getOrdersDate() {
-        return ordersDate;
+    public Timestamp getRentDate() {
+        return rentDate;
     }
 
-    public void setOrdersDate(LocalDateTime ordersDate) {
-        this.ordersDate = ordersDate;
+    public void setRentDate(Timestamp rentDate) {
+        this.rentDate = rentDate;
     }
 
-    public LocalDateTime getRentFrom() {
+    public Timestamp getRentFrom() {
         return rentFrom;
     }
 
-    public void setRentFrom(LocalDateTime rentFrom) {
+    public void setRentFrom(Timestamp rentFrom) {
         this.rentFrom = rentFrom;
     }
 
-    public LocalDateTime getRentTo() {
+    public Timestamp getRentTo() {
         return rentTo;
     }
 
-    public void setRentTo(LocalDateTime rentTo) {
+    public void setRentTo(Timestamp rentTo) {
         this.rentTo = rentTo;
     }
 
@@ -87,5 +92,13 @@ public class AnotherService {
 
     public void setServicePaid(boolean servicePaid) {
         this.servicePaid = servicePaid;
+    }
+
+    public BigDecimal getServicePrice() {
+        return servicePrice;
+    }
+
+    public void setServicePrice(BigDecimal servicePrice) {
+        this.servicePrice = servicePrice;
     }
 }
