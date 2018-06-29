@@ -10,6 +10,8 @@ import java.util.List;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+
     @ExceptionHandler(ValidationException.class)
     @ResponseBody
     public ResponseEntity<List<ValidationError>> handleValidationException(ValidationException e) {

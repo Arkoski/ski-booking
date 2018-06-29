@@ -66,6 +66,9 @@ public class ClientServiceImpl implements ClientService {
         if (surname == null) {
             ValidationError error = new ValidationError("surname", "May not be null");
             errors.add(error);
+        } else if (surname.isEmpty()) {
+            ValidationError error = new ValidationError("surname", "May not be null");
+            errors.add(error);
         }
 
         if (!errors.isEmpty()) {

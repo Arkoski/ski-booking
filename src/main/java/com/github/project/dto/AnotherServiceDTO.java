@@ -1,20 +1,17 @@
 package com.github.project.dto;
 
 import com.github.project.model.AnotherService;
-import com.github.project.model.Client;
 import com.github.project.model.ServiceType;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class AnotherServiceDTO {
     private String rentFrom;
     private String rentTo;
 
-    private Client client;
+    private Long clientId;
 
     @Enumerated(EnumType.STRING)
     private ServiceType serviceType;
@@ -27,7 +24,7 @@ public class AnotherServiceDTO {
 
         this.rentFrom = anotherService.getRentFrom().format(formatter);
         this.rentTo = anotherService.getRentTo().format(formatter);
-        this.client = anotherService.getClient();
+        this.clientId = anotherService.getId();
         this.serviceType = anotherService.getServiceType();
     }
 
@@ -47,12 +44,12 @@ public class AnotherServiceDTO {
         this.rentTo = rentTo;
     }
 
-    public Client getClient() {
-        return client;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public ServiceType getServiceType() {
