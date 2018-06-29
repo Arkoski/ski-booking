@@ -5,6 +5,8 @@ import com.github.project.model.ServiceType;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class AnotherServiceDTO {
@@ -25,6 +27,7 @@ public class AnotherServiceDTO {
         this.rentFrom = anotherService.getRentFrom().format(formatter);
         this.rentTo = anotherService.getRentTo().format(formatter);
         this.clientId = anotherService.getId();
+
         this.serviceType = anotherService.getServiceType();
     }
 
