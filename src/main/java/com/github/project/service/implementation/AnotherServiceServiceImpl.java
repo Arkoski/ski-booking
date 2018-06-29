@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,10 +35,13 @@ public class AnotherServiceServiceImpl implements AnotherServiceService{
 
     @Override
     public AnotherService createAnotherService(AnotherServiceDTO anotherService) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
         AnotherService another = new AnotherService();
-        another.setRentDate(Timestamp.valueOf(LocalDateTime.now()));
-        another.setRentFrom(anotherService.getRentFrom());
-        another.setRentTo(anotherService.getRentTo());
+        another.setRentDate(LocalDateTime.now());
+        another.setRentFrom(LocalDateTime.parse(anotherService.getRentFrom(), formatter));
+        another.setRentTo(LocalDateTime.parse(anotherService.getRentTo(), formatter));
         another.setServicePrice(anotherService.getServiceType().getValue());
         another.setServicePaid(false);
         another.setServiceType(anotherService.getServiceType());

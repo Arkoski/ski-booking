@@ -14,11 +14,11 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/orders")
-public class OrdersController {
+public class OrderController {
     private OrderService orderService;
 
     @Autowired
-    public OrdersController(OrderService orderService) {
+    public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
 

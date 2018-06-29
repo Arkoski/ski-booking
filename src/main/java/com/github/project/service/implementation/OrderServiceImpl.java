@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -43,10 +44,14 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order createOrder(OrderDTO orders) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        //LocalDateTime dateTime = LocalDateTime.parse(str, formatter);
+
         Order order = new Order();
         order.setBookDate(LocalDateTime.now());
-        order.setBookFrom(orders.getBookFrom());
-        order.setBookTo(orders.getBookTo());
+        order.setBookFrom(LocalDateTime.parse(orders.getBookFrom(), formatter));
+        order.setBookTo(LocalDateTime.parse(orders.getBookTo(), formatter));
         order.setBookPaid(false);
         order.setClient(clientRepository.findOne(orders.getClientId()));
         order.setRoom(roomRepository.findOne(orders.getRoomId()));

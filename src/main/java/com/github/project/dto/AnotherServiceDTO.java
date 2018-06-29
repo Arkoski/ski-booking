@@ -7,10 +7,12 @@ import com.github.project.model.ServiceType;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class AnotherServiceDTO {
-    private Timestamp rentFrom;
-    private Timestamp rentTo;
+    private String rentFrom;
+    private String rentTo;
 
     private Client client;
 
@@ -21,25 +23,27 @@ public class AnotherServiceDTO {
     }
 
     public AnotherServiceDTO(AnotherService anotherService) {
-        this.rentFrom = anotherService.getRentFrom();
-        this.rentTo = anotherService.getRentTo();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+        this.rentFrom = anotherService.getRentFrom().format(formatter);
+        this.rentTo = anotherService.getRentTo().format(formatter);
         this.client = anotherService.getClient();
         this.serviceType = anotherService.getServiceType();
     }
 
-    public Timestamp getRentFrom() {
+    public String getRentFrom() {
         return rentFrom;
     }
 
-    public void setRentFrom(Timestamp rentFrom) {
+    public void setRentFrom(String rentFrom) {
         this.rentFrom = rentFrom;
     }
 
-    public Timestamp getRentTo() {
+    public String getRentTo() {
         return rentTo;
     }
 
-    public void setRentTo(Timestamp rentTo) {
+    public void setRentTo(String rentTo) {
         this.rentTo = rentTo;
     }
 

@@ -15,10 +15,11 @@ public class AnotherService {
     @ManyToOne
     private Client client;
 
-    private Timestamp rentDate;
-    private Timestamp rentFrom;
-    private Timestamp rentTo;
+    private LocalDateTime rentDate;
+    private LocalDateTime rentFrom;
+    private LocalDateTime rentTo;
 
+    @Enumerated(EnumType.STRING)
     private ServiceType serviceType;
 
     private boolean servicePaid;
@@ -28,7 +29,7 @@ public class AnotherService {
     public AnotherService() {
     }
 
-    public AnotherService(Client client, Timestamp rentDate, Timestamp rentFrom, Timestamp rentTo, ServiceType serviceType, boolean servicePaid, BigDecimal servicePrice) {
+    public AnotherService(Client client, LocalDateTime rentDate, LocalDateTime rentFrom, LocalDateTime rentTo, ServiceType serviceType, boolean servicePaid, BigDecimal servicePrice) {
         this.client = client;
         this.rentDate = rentDate;
         this.rentFrom = rentFrom;
@@ -54,27 +55,27 @@ public class AnotherService {
         this.client = client;
     }
 
-    public Timestamp getRentDate() {
+    public LocalDateTime getRentDate() {
         return rentDate;
     }
 
-    public void setRentDate(Timestamp rentDate) {
+    public void setRentDate(LocalDateTime rentDate) {
         this.rentDate = rentDate;
     }
 
-    public Timestamp getRentFrom() {
+    public LocalDateTime getRentFrom() {
         return rentFrom;
     }
 
-    public void setRentFrom(Timestamp rentFrom) {
+    public void setRentFrom(LocalDateTime rentFrom) {
         this.rentFrom = rentFrom;
     }
 
-    public Timestamp getRentTo() {
+    public LocalDateTime getRentTo() {
         return rentTo;
     }
 
-    public void setRentTo(Timestamp rentTo) {
+    public void setRentTo(LocalDateTime rentTo) {
         this.rentTo = rentTo;
     }
 
