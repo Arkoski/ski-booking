@@ -6,8 +6,8 @@ import com.github.project.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/room")
@@ -20,19 +20,19 @@ public class RoomController {
     }
 
     @GetMapping("/{id}")
-    public Room findOneById(@PathVariable Long id) {
-        return roomService.findById(id);
+    public RoomDTO findOneById(@PathVariable Long id) {
+        return new RoomDTO(roomService.findById(id));
     }
 
     @GetMapping
-    public Set<Room> findAll() {
+    public Set<RoomDTO> findAll() {
         Set<Room> all = roomService.findAll();
-        return new HashSet<>(all);
+        return all.stream().map(room -> new RoomDTO(room)).collect(Collectors.toSet());
     }
 
     @PostMapping
-    public Room createRoom(@RequestBody RoomDTO roomDTO) {
-        return roomService.createRoom(roomDTO);
+    public RoomDTO createRoom(@RequestBody RoomDTO roomDTO) {
+        return new RoomDTO(roomService.createRoom(roomDTO));
     }
 
     @DeleteMapping("/{id}")

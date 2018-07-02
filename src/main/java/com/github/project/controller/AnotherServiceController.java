@@ -7,8 +7,8 @@ import com.github.project.service.AnotherServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/another-service")
@@ -23,13 +23,13 @@ public class AnotherServiceController {
 
 
     @GetMapping("/{id}")
-    public AnotherService findOneById(@PathVariable Long id) {
-        return anotherServiceService.findById(id);
+    public AnotherServiceDTO findOneById(@PathVariable Long id) {
+        return new AnotherServiceDTO(anotherServiceService.findById(id));
     }
 
     @PostMapping
-    public AnotherService create(@RequestBody AnotherServiceDTO another) {
-        return anotherServiceService.createAnotherService(another);
+    public AnotherServiceDTO create(@RequestBody AnotherServiceDTO another) {
+        return new AnotherServiceDTO(anotherServiceService.createAnotherService(another));
     }
 
 
@@ -40,11 +40,11 @@ public class AnotherServiceController {
 
 
     @GetMapping
-    public Set<AnotherService> findAll() {
+    public Set<AnotherServiceDTO> findAll() {
 
         Set<AnotherService> all = anotherServiceService.findAll();
 
-        return new HashSet<>(all);
+        return all.stream().map(anotherService -> new AnotherServiceDTO(anotherService)).collect(Collectors.toSet());
     }
 
 

@@ -6,8 +6,8 @@ import com.github.project.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/client")
@@ -20,19 +20,19 @@ public class ClientController {
     }
 
     @GetMapping("/{id}")
-    public Client findOneById(@PathVariable Long id) {
-        return clientService.findById(id);
+    public ClientDTO findOneById(@PathVariable Long id) {
+        return new ClientDTO(clientService.findById(id));
     }
 
     @GetMapping
-    public Set<Client> findAll() {
+    public Set<ClientDTO> findAll() {
         Set<Client> all = clientService.findAll();
-        return new HashSet<>(all);
+        return all.stream().map(client -> new ClientDTO(client)).collect(Collectors.toSet());
     }
 
     @PostMapping
-    public Client createClient(@RequestBody ClientDTO clientDTO) {
-        return clientService.createClient(clientDTO);
+    public ClientDTO createClient(@RequestBody ClientDTO clientDTO) {
+        return new ClientDTO(clientService.createClient(clientDTO));
     }
 
     @DeleteMapping("/{id}")
