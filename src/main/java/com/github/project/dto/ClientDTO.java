@@ -5,6 +5,8 @@ import com.github.project.model.Client;
 public class ClientDTO {
     private String name;
     private String surname;
+    private String email;
+    private String password;
 
 
     public ClientDTO() {
@@ -13,6 +15,8 @@ public class ClientDTO {
     public ClientDTO(Client client) {
         this.name = client.getName();
         this.surname = client.getSurname();
+        this.password = client.getPassword();
+        this.email = client.getEmail();
 
     }
 
@@ -30,5 +34,21 @@ public class ClientDTO {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

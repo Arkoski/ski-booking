@@ -11,4 +11,6 @@ public interface ClientService {
     Set<Client> findAll();
     Client createClient(ClientDTO client);
     void deleteClient(Long id);
+    Client findByEmail(String email);
+    Client findByConfirmationToken(String confirmationToken);
 }

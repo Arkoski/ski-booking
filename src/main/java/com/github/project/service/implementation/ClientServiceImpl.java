@@ -42,6 +42,8 @@ public class ClientServiceImpl implements ClientService {
         Client client = new Client();
         client.setName(clientDTO.getName());
         client.setSurname(clientDTO.getSurname());
+        client.setPassword(clientDTO.getPassword());
+        client.setEmail(clientDTO.getEmail());
 
         return clientRepository.save(client);
     }
@@ -51,6 +53,16 @@ public class ClientServiceImpl implements ClientService {
         Client client = clientRepository.findOne(id);
         validateFindById(client);
         clientRepository.delete(id);
+    }
+
+    @Override
+    public Client findByEmail(String email) {
+        return clientRepository.findByEmail(email);
+    }
+
+    @Override
+    public Client findByConfirmationToken(String confirmationToken) {
+        return clientRepository.findByConfirmationToken(confirmationToken);
     }
 
     private void validateCreation(String name, String surname) {
