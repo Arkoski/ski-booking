@@ -27,7 +27,6 @@ public class Client {
     private String email;
 
     @Column(name = "password")
-    @Transient
     private String password;
 
     @Column(name = "enabled")
