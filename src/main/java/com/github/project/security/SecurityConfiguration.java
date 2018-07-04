@@ -19,7 +19,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
         http.authorizeRequests()
-                .antMatchers("/registration").permitAll()
+                .antMatchers("/registration", "/registration-error").permitAll()
                 .antMatchers("/confirm").permitAll()
                 .antMatchers("/css/*","/img/*").permitAll()
                 .antMatchers("/home").permitAll()
@@ -29,6 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .failureHandler((request, response, exception) -> response.sendError(HttpStatus.BAD_REQUEST.value(), "Email or password invalid"))
+                .failureUrl("/login-error.html")
                 .usernameParameter("email")
                 .passwordParameter("password")
                 .defaultSuccessUrl("/loginSuccess").permitAll();

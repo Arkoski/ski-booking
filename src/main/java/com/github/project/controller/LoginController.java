@@ -15,4 +15,12 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping("/login-error")
+    public String loginError(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
+        model.addAttribute("error", true);
+        return "login";
+    }
+
 }
