@@ -1,15 +1,58 @@
 body {
-    /*background: url("../img/slotwiny1.jpg");*/
     background: lightblue;
 }
-.col-md-12{
-    background: white;
-    border-radius: 20px;
-    padding: 15px 0px 0px 0px;
+
+h1 {
+    text-align: center;
 }
-.btn{
+
+.text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 15px;
 }
-.window{
-    margin: 15px 0px 15px 0px; max-height:1200px; max-width: 1200px; border: solid 1px gray; border-radius: 20px;
+
+.btn {
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+}
+
+.window {
+    margin: 15px 0px 15px 0px;
+    max-height: 1200px;
+    width: 1200px;
+    border: solid 1px gray;
+    border-radius: 20px;
+    background: white;
+    padding: 15px 0px 0px 0px;
+
+}
+
+.form-group {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+.footer {
+    background: #111111;
+    height: 120px;
+}
+
+.logoutButton {
+    background-color: #f44336;
+    color: white;
+    margin-left: 900px;
+    height: 60px;
+    width: 120px;
+}
+
+.logoutButton:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #f44336;
 }

@@ -16,7 +16,7 @@
         <div class="col-md-8">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 window">
+                    <div class="window">
                         <form th:action="@{/registration}" method="post">
                             <fieldset>
                                 <h1 style="vertical-align: middle">Rejestracja</h1>
@@ -65,5 +65,8 @@
         </div>
     </div>
 </div>
+<footer>
+    <div th:replace="fragments/footer :: footer"></div>
+</footer>
 </body>
 </html>

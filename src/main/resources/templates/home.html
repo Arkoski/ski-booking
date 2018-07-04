@@ -16,7 +16,18 @@
         <div class="col-md-8">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 window">
+                    <div class="window">
+                        <form th:action="@{/room}" method="get">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6">
+                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Show rooms"/>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                            </fieldset>
+                        </form>
 
                         <form th:action="@{/login}" method="get">
                             <fieldset>
@@ -29,12 +40,14 @@
                                 </div>
                             </fieldset>
                         </form>
+
                         <form th:action="@{/registration}" method="get">
                             <fieldset>
                                 <div class="row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-6">
-                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Registration"/>
+                                        <input type="submit" class="btn btn-lg btn-primary btn-block"
+                                               value="Registration"/>
                                     </div>
                                     <div class="col-md-3"></div>
                                 </div>
@@ -46,5 +59,9 @@
         </div>
     </div>
 </div>
+
+<footer>
+    <div th:replace="fragments/footer :: footer"></div>
+</footer>
 </body>
 </html>

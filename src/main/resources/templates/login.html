@@ -14,13 +14,12 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <div class="container window">
+            <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                    <div class="window">
                         <form th:action="@{/login}" method="post">
                             <fieldset>
-                                <h1 style="vertical-align: middle">Please Sign In</h1>
-
+                                <h1 style="vertical-align: middle">Zaloguj sie</h1>
                                 <div th:if="${param.error}">
                                     <div class="alert alert-danger">
                                         Invalid username and password.
@@ -31,7 +30,6 @@
                                         You have been logged out.
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <input type="text" name="email" id="email" class="form-control input-lg"
                                            placeholder="E-mail" required="true" autofocus="true"/>
@@ -40,13 +38,8 @@
                                     <input type="password" name="password" id="password" class="form-control input-lg"
                                            placeholder="Password" required="true"/>
                                 </div>
-
                                 <div class="row">
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-6">
-                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign In"/>
-                                    </div>
-                                    <div class="col-md-3"></div>
+                                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign In"/>
                                 </div>
                             </fieldset>
                         </form>
@@ -56,5 +49,8 @@
         </div>
     </div>
 </div>
+<footer>
+    <div th:replace="fragments/footer :: footer"></div>
+</footer>
 </body>
 </html>
