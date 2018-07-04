@@ -8,11 +8,11 @@ import java.util.Collections;
 
 public class ClientUserDetails implements UserDetails {
 
-    private String login;
+    private String email;
     private String password;
 
-    public ClientUserDetails(String login, String password) {
-        this.login = login;
+    public ClientUserDetails(String email, String password) {
+        this.email = email;
         this.password = password;
     }
 
@@ -28,7 +28,7 @@ public class ClientUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return login;
+        return email;
     }
 
     @Override

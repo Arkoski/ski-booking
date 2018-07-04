@@ -1,28 +1,15 @@
 body {
-    background: #43cea2;
-    background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
-    background: linear-gradient(to right, #185a9d, #43cea2);
-    color: #fff;
-    text-align: center;
+    /*background: url("../img/slotwiny1.jpg");*/
+    background: lightblue;
 }
-
-.page-content {
-    position: absolute;
-    text-align: center;
-    left: 0;
-    right: 0;
-    top: 35%;
-    bottom: 0;
+.col-md-12{
+    background: white;
+    border-radius: 20px;
+    padding: 15px 0px 0px 0px;
 }
-
-h1 {
-    font-size: 46px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.btn{
+    margin-bottom: 15px;
 }
-
-h2 {
-    font-size: 34px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.window{
+    margin: 15px 0px 15px 0px; max-height:1200px; max-width: 1200px; border: solid 1px gray; border-radius: 20px;
 }

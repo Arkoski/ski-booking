@@ -16,14 +16,6 @@ public class RegistrationController {
 
     @GetMapping("/registration")
     public String registration() {
-
-
-
-//        model.addAttribute("firstname", firstname);
-//        model.addAttribute("lastname", lastname);
-//        model.addAttribute("password", password);
-//        model.addAttribute("email", email);
-
         return "registration";
     }
 

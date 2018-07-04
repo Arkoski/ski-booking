@@ -6,13 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class LoginController {
-
-    @GetMapping("/login")
-    public String login(Model model) {
+public class LoginSuccessController {
+    @GetMapping("/loginSuccess")
+    public String loginSuccess(Model model) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         model.addAttribute("username", username);
-        return "login";
+        return "loginSuccess";
     }
-
 }

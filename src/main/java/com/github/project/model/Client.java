@@ -35,7 +35,6 @@ public class Client {
     @Column(name = "confirmation_token")
     private String confirmationToken;
 
-
     @OneToMany(mappedBy = "client")
     private Set<Order> orders;
 
