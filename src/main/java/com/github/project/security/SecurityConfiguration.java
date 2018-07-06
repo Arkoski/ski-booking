@@ -28,19 +28,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .formLogin()
                 .loginPage("/login")
+//                .loginProcessingUrl("/login-authenticate")
                 .failureHandler((request, response, exception) -> response.sendError(HttpStatus.BAD_REQUEST.value(), "Email or password invalid"))
                 .failureUrl("/login-error")
                 .usernameParameter("email")
                 .passwordParameter("password")
                 .defaultSuccessUrl("/loginSuccess").permitAll();
 
-
         http
                 .logout()
                 .invalidateHttpSession(true)
                 .permitAll()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/");
+                .logoutSuccessUrl("/home");
     }
 
     @Override

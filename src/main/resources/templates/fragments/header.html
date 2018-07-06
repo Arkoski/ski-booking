@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -11,42 +11,34 @@
 <div th:fragment="header">
     <div class="container-fluid">
         <div class="row header">
-            <div class="col-md-6">
-                <img class="logo" th:src="@{/img/mountain.png}" />
+            <div class="col-md-3">
+                <img class="logo" th:src="@{/img/mountain.png}"/>
             </div>
-            <div class="col-md-1">
-                <form th:action="@{/home}" method="get">
+
+            <div class="col-md-9" >
+                <form class="head" th:action="@{/home}" method="get">
                     <fieldset>
                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Home"/>
                     </fieldset>
                 </form>
-            </div>
-            <div class="col-md-1">
-                <form th:action="@{/room}" method="get">
+
+                <form class="head" th:action="@{/room}" method="get">
                     <fieldset>
                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Show rooms"/>
                     </fieldset>
                 </form>
-            </div>
-            <div class="col-md-1">
-                <form th:action="@{/login}" method="get">
+
+                <form class="head" th:action="@{/login}" method="get">
                     <fieldset>
                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"/>
                     </fieldset>
                 </form>
-            </div>
-            <div class="col-md-1">
-                <form th:action="@{/registration}" method="get">
+
+                <form class="head" th:action="@{/registration}" method="get">
                     <fieldset>
                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Register"/>
                     </fieldset>
                 </form>
-            </div>
-            <div class="col-md-1">
-
-            </div>
-            <div class="col-md-1">
-
             </div>
         </div>
     </div>

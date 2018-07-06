@@ -13,6 +13,28 @@
 <head>
     <div th:replace="fragments/header :: header">Header</div>
 </head>
+
+
+
+<!--<div th:if="${!auth}'alert(\'a\');'">-->
+
+    <div th:switch="${auth}">
+        <p th:case="false">
+            <script>
+                alert("AKTYWUJ MAILA!");
+            </script>
+        </p>
+        <p th:case="true">
+            <script>
+                alert("mail activated");
+            </script>
+        </p>
+    </div>
+<!--<div th:onclick="">-->
+    <!---->
+<!--</div>-->
+
+<!--</div>-->
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2"></div>

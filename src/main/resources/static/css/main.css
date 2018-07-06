@@ -1,5 +1,31 @@
+fieldset{
+    width: 200px;
+}
+
+
+form.head{
+    display: inline-block;
+    margin: 35px 5px 10px 5px;
+}
+
+/*form.mid{*/
+    /*!*align: center;*!*/
+    /*!*align-items: center;*!*/
+    /*vertical-align: center;*/
+/*}*/
+
+fieldset{
+    margin: auto;
+    align: center;
+    align-items: center;
+    vertical-align: center;
+}
+
 body {
     background: lightblue;
+    width: 1200px;
+    align: center;
+    margin: auto;
 }
 
 h1 {
@@ -17,24 +43,44 @@ h1 {
     margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 400px;
+    /*max-width: auto;*/
 }
 
-.window {
-    margin: 15px 0px 15px 0px;
-    max-height: 1200px;
-    width: 1200px;
+.col-md-8.form-group{
+    align: center;
+
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.col-md-8{
+    /*width: 800px;*/
     border: solid 1px gray;
     border-radius: 20px;
     background: white;
-    padding: 15px 0px 0px 0px;
+    margin: 15px 0 15px 0px;
+    vertical-align: middle;
+    /*margin-left: 200px;*/
+    /*margin-right: 200px;*/
+}
+
+.window {
+    /*text-align: center;*/
+    /*margin: 15px 0px 15px 0px;*/
+    /*width: max-content;*/
+    /*!*width: auto;*!*/
+    /*border: solid 1px gray;*/
+    /*border-radius: 20px;*/
+    /*background: white;*/
+    /*padding: 15px 0px 0px 0px;*/
 }
 
 .form-group {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: middle;
+    /*max-width: 600px;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*vertical-align: middle;*/
 }
 
 .header {
@@ -50,7 +96,7 @@ h1 {
 .logoutButton {
     background-color: #f44336;
     color: white;
-    margin-left: 900px;
+    margin-left: 550px;
     height: 60px;
     width: 120px;
 }
@@ -64,6 +110,6 @@ h1 {
 .logo{
     height: 120px;
     width: 180px;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     margin: auto;
 }

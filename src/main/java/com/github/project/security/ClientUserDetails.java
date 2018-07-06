@@ -10,10 +10,12 @@ public class ClientUserDetails implements UserDetails {
 
     private String email;
     private String password;
+    private boolean isEnabled;
 
-    public ClientUserDetails(String email, String password) {
+    public ClientUserDetails(String email, String password, boolean isEnabled) {
         this.email = email;
         this.password = password;
+        this.isEnabled = isEnabled;
     }
 
     @Override
@@ -48,6 +50,6 @@ public class ClientUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return isEnabled;
     }
 }
