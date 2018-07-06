@@ -4,7 +4,10 @@ import com.github.project.dto.ClientDTO;
 import com.github.project.exceptions.ValidationError;
 import com.github.project.exceptions.ValidationException;
 import com.github.project.model.Client;
+import com.github.project.model.Role;
+import com.github.project.model.RoleEnum;
 import com.github.project.repository.ClientRepository;
+import com.github.project.repository.RoleRepository;
 import com.github.project.service.ClientService;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +18,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static com.github.project.model.RoleEnum.NOT_VERIFIED;
+
 @Service
 public class ClientServiceImpl implements ClientService {
     private ClientRepository clientRepository;
+    private RoleRepository roleRepository;
 
     @Autowired
-    public ClientServiceImpl(ClientRepository clientRepository) {
+    public ClientServiceImpl(ClientRepository clientRepository, RoleRepository roleRepository) {
         this.clientRepository = clientRepository;
+        this.roleRepository = roleRepository;
     }
 
     @Override
@@ -45,6 +52,9 @@ public class ClientServiceImpl implements ClientService {
         client.setSurname(clientDTO.getSurname());
         client.setPassword(clientDTO.getPassword());
         client.setEmail(clientDTO.getEmail());
+
+        Role notVerified = roleRepository.findOneByName(NOT_VERIFIED.getName());
+        client.setRole(notVerified);
 
         return clientRepository.save(client);
     }

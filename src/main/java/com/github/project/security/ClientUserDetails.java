@@ -1,24 +1,33 @@
 package com.github.project.security;
 
+import com.github.project.model.Role;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
+import java.util.List;
 
 public class ClientUserDetails implements UserDetails {
 
     private String email;
     private String password;
+    private boolean enabled;
+    private String role;
 
-    public ClientUserDetails(String email, String password) {
+    public ClientUserDetails(String email, String password, boolean isEnabled, Role role) {
         this.email = email;
         this.password = password;
+        this.enabled = true;
+        this.role = "ROLE_" + role.getName();
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList();
+        List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
+        list.add(new SimpleGrantedAuthority(role));
+        return list;
     }
 
     @Override
@@ -48,6 +57,6 @@ public class ClientUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return enabled;
     }
 }

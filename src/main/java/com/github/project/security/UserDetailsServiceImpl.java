@@ -18,6 +18,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (byEmail == null) {
             throw new UsernameNotFoundException(s);
         }
-        return new ClientUserDetails(byEmail.getEmail(), byEmail.getPassword());
+        return new ClientUserDetails(byEmail.getEmail(), byEmail.getPassword(), byEmail.isEnabled(), byEmail.getRole());
     }
 }

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" href="/css/main.css"/>
 <head>
-    <!--<title th:text="${title}"></title>-->
+    <title th:text="Login"></title>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
@@ -22,17 +22,12 @@
                     <div class="window">
                         <form th:action="@{/login}" method="post">
                             <fieldset>
-                                <h1 style="vertical-align: middle">Zaloguj sie</h1>
+                                <h1>Zaloguj sie</h1>
                                 <div th:if="${error}">
                                     <div class="alert alert-danger">
                                         Invalid username or password.
                                     </div>
                                 </div>
-                                <!--<div th:if="${param.logout}">-->
-                                    <!--<div class="alert alert-info">-->
-                                        <!--You have been logged out.-->
-                                    <!--</div>-->
-                                <!--</div>-->
                                 <div class="form-group">
                                     <input type="text" name="email" id="email" class="form-control input-lg"
                                            placeholder="E-mail" required="true" autofocus="true"/>

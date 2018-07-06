@@ -22,17 +22,6 @@ public class RegistrationController {
         return "registration";
     }
 
-//    @PostMapping(path = "/registration")
-//    @ResponseBody
-//    public ResponseEntity<ClientDTO> createClient(ClientDTO clientDTO) {
-//        try {
-//            return new ResponseEntity<>(new ClientDTO(clientService.createClient(clientDTO)), HttpStatus.CREATED);
-//        } catch (ValidationException e) {
-//            HttpHeaders headers = new HttpHeaders();
-//            headers.add("Location", "/registration-error");
-//            return new ResponseEntity<>(headers, HttpStatus.FOUND);
-//        }
-//    }
     @PostMapping(path = "/registration")
     public String createClient(ClientDTO clientDTO, Model model) {
         try {
@@ -51,5 +40,4 @@ public class RegistrationController {
         model.addAttribute("error", true);
         return "registration";
     }
-
 }
