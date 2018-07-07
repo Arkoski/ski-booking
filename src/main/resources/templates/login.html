@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" href="/css/main.css"/>
 <head>
-    <title th:text="Login"></title>
+    <!--<title th:text="${title}"></title>-->
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
@@ -17,34 +17,29 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <div class="container">
-                <div class="row">
-                    <div class="window">
-                        <form th:action="@{/login}" method="post">
-                            <fieldset>
-                                <h1>Zaloguj sie</h1>
-                                <div th:if="${error}">
-                                    <div class="alert alert-danger">
-                                        Invalid username or password.
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="email" id="email" class="form-control input-lg"
-                                           placeholder="E-mail" required="true" autofocus="true"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" name="password" id="password" class="form-control input-lg"
-                                           placeholder="Password" required="true"/>
-                                </div>
-                                <div class="row">
-                                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign In"/>
-                                </div>
-                            </fieldset>
-                        </form>
+            <form th:action="@{/login}" method="post">
+                <fieldset>
+                    <h1 style="vertical-align: middle">Zaloguj sie</h1>
+                    <div th:if="${error}">
+                        <div class="alert alert-danger">
+                            Invalid username or password.
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <div class="form-group">
+                        <input type="text" name="email" id="email" class="form-control input-lg"
+                               placeholder="E-mail" required="true" autofocus="true"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-lg"
+                               placeholder="Password" required="true"/>
+                    </div>
+                    <div class="row">
+                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign In"/>
+                    </div>
+                </fieldset>
+            </form>
         </div>
+
     </div>
 </div>
 <footer>

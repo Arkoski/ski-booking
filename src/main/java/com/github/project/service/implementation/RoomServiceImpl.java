@@ -38,7 +38,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public Room createRoom(RoomDTO roomDTO) {
-        validateCreation(roomDTO.getPrice(),roomDTO.getRoomSize());
+        validateCreation(roomDTO.getPrice(), roomDTO.getRoomSize());
         Room room = new Room();
         room.setPrice(roomDTO.getPrice());
         room.setRoomSize(roomDTO.getRoomSize());

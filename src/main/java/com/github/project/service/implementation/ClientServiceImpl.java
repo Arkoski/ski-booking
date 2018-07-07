@@ -5,7 +5,6 @@ import com.github.project.exceptions.ValidationError;
 import com.github.project.exceptions.ValidationException;
 import com.github.project.model.Client;
 import com.github.project.model.Role;
-import com.github.project.model.RoleEnum;
 import com.github.project.repository.ClientRepository;
 import com.github.project.repository.RoleRepository;
 import com.github.project.service.ClientService;

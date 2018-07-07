@@ -40,9 +40,7 @@ public class AnotherServiceController {
 
     @GetMapping
     public Set<AnotherServiceDTO> findAll() {
-
         Set<AnotherService> all = anotherServiceService.findAll();
-
         return all.stream().map(AnotherServiceDTO::new).collect(Collectors.toSet());
     }
 }
