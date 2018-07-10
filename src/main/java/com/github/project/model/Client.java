@@ -8,7 +8,6 @@ import java.util.Set;
 
 @Entity
 public class Client {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,10 +26,15 @@ public class Client {
     private String email;
 
     @Column(name = "password")
+    //todo
+    //@Size(min = 6)
     private String password;
 
     @Column(name = "enabled")
     private boolean enabled;
+
+    @ManyToOne
+    private Role role;
 
     @Column(name = "confirmation_token")
     private String confirmationToken;
@@ -125,5 +129,13 @@ public class Client {
 
     public void setConfirmationToken(String confirmationToken) {
         this.confirmationToken = confirmationToken;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

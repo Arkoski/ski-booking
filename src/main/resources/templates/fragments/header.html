@@ -14,26 +14,22 @@
             <div class="col-md-3">
                 <img class="logo" th:src="@{/img/mountain.png}"/>
             </div>
-
-            <div class="col-md-9" >
+            <div class="col-md-9">
                 <form class="head" th:action="@{/home}" method="get">
                     <fieldset>
                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Home"/>
                     </fieldset>
                 </form>
-
                 <form class="head" th:action="@{/room}" method="get">
                     <fieldset>
                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Show rooms"/>
                     </fieldset>
                 </form>
-
                 <form class="head" th:action="@{/login}" method="get">
                     <fieldset>
                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"/>
                     </fieldset>
                 </form>
-
                 <form class="head" th:action="@{/registration}" method="get">
                     <fieldset>
                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Register"/>

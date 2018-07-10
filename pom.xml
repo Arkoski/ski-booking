@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.Arkoski</groupId>
-    <artifactId>ski-resort</artifactId>
+    <groupId>com.github.gielr</groupId>
+    <artifactId>ski-booking</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>

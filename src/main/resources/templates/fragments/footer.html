@@ -14,7 +14,7 @@
             <fieldset>
                 <div class="row">
                     <div sec:authorize="isAuthenticated()">
-                        <div style="">
+                        <div class="text">
                             <p>Jestes zalogowany jako: (<span sec:authentication="principal.username"/>)</p>
                         </div>
                         <input type="submit" class="logoutButton" value="Wyloguj"/>
