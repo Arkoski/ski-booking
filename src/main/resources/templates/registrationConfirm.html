@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/css/main.css"/>
+<head>
+    <title>Registration</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<head>
+    <div th:replace="fragments/header :: header">Header</div>
+</head>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <!--<div class="container">-->
+            <!--<div class="row">-->
+            <!--<div class="window">-->
+            <h1 style="vertical-align: middle">Twoje konto zostało pomyślnie aktywowane.</h1>
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<footer>
+    <div th:replace="fragments/footer :: footer"></div>
+</footer>
+</body>
+</html>

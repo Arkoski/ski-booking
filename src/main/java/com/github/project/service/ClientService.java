@@ -13,4 +13,5 @@ public interface ClientService {
     void deleteClient(Long id);
     Client findByEmail(String email);
     Client findByConfirmationToken(String confirmationToken);
+    Client activateUser(String confirmationToken);
 }
