@@ -9,15 +9,14 @@
 <div th:fragment="header">
     <div class="container-fluid">
         <div class="row header">
-            <div class="col-md-3">
+            <div class="col-md-12">
                 <a th:href="@{/home}">
                     <img class="logo" th:src="@{/img/Ski-booking-logo.png}"/>
                 </a>
-            </div>
-            <div class="col-md-9 menu-wrapper">
+
                 <ul class="menu-desktop">
                     <li class="children">
-                        <a th:href="@{/bookingTime}">Zarezerwój pokój</a>
+                        <a th:href="@{/bookingTime}">Zarezerwuj pokój</a>
                     </li>
                     <li class="children">
                         <a th:href="@{/login}">Logowanie</a>

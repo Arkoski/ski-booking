@@ -17,22 +17,24 @@
         <div class="col-md-8">
             <div class="text">
                 <p>
-                <td th:text="'Wybrany pokoj jest dostepny w wybranym przez Ciebie terminie.'"/><br/>
-                <td th:text="'Aktualna cena pokoju wynosi:' + ${room.price}"/><br/>
-                <td th:text="' Pokoj przeznaczony jest dla: ' + ${room.roomSize} + 'osob'"/>
+                <td th:text="'Wybrany pokoj jest dostepny w wybranym przez Ciebie terminie.'"/>
+                </p>
+                <p>
+                <td th:text="'Aktualna cena pokoju wynosi:' + ${room.price}"/>
+                </p>
+                <p>
+                <td th:text="'Pokoj przeznaczony jest dla: ' + ${room.roomSize} + 'osob'"/>
                 </p>
                 <p>Zarezerwuj pokoj</p>
                 <form action="#" th:action="@{/orders}" th:object="${orderDTO}" method="post">
                     <fieldset>
                         <input type="hidden" th:field="*{roomId}" th:value="${room.roomId}"/>
-                            <input type="date" name="Date from" id="dateFrom" class="form-control input-lg"
-                                   placeholder="Date from" required="true" autofocus="true"
-                                   th:field="*{bookFrom}"/><br>
-
-                            <input type="date" name="Date to" id="dateTo" class="form-control input-lg"
-                                   placeholder="Date to" required="true" autofocus="true"
-                                   th:field="*{bookTo}"/><br>
-
+                        <input type="date" name="Date from" id="dateFrom" class="form-control input-lg"
+                               placeholder="Date from" required="true" autofocus="true"
+                               th:field="*{bookFrom}"/>
+                        <input type="date" name="Date to" id="dateTo" class="form-control input-lg"
+                               placeholder="Date to" required="true" autofocus="true"
+                               th:field="*{bookTo}"/>
                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Potwierdz termin"/>
                     </fieldset>
                 </form>

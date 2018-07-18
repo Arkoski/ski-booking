@@ -21,18 +21,14 @@
                         <div class="col-md-2"></div>
                         <div style="text-align: center; border: solid" class="col-md-8">
                             <p>
-                                Klient email:
-                            <td th:text="${client.email}"/>
+                            <td th:text="'Klient email:' + ${client.email}"/>
                             </p>
                             <p>
-                                Imie klienta:
-                            <td th:text="${client.name}"/>
+                            <td th:text="'Imie klienta:' + ${client.name}"/>
                             </p>
                             <p>
-                                Nazwisko klienta:
-                            <td th:text="${client.surname}"/>
+                            <td th:text="'Nazwisko klienta:' + ${client.surname}"/>
                             </p>
-
                             <form name="f" th:action="@{/adminPage/clientOrders}" method="post">
                                 <input type="hidden" name="email" th:value="${client.email}"/>
                                 <input type="submit" class="btn btn-lg btn-primary btn-block"

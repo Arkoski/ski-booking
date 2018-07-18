@@ -15,16 +15,27 @@
     <div class="row main">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            Dupa
             <div th:if="${clientOrders.isEmpty()}">
-                Klient nie ma zadnych zamowien.
+                <span th:text="' Klient nie ma zadnych zamowien.'"></span>
             </div>
             <div th:else="${!clientOrders.isEmpty()}">
-                <tr th:each="order: ${clientOrders}">
-                    <p>
-                    <td th:text="${order.room.price}"/>
-                    </p>
-                </tr>
+                <table>
+                    <tr th:each="order: ${clientOrders}">
+                        <p>
+                        <td th:text="'Pokój numer: ' + ${order.room.id}"/>
+                        <td th:text="'Data rozpoczecia bookingu: ' + ${order.bookFrom}"/>
+                        <td th:text="'Data zakończenia bookingu: ' + ${order.bookTo}"/>
+                        <td th:text="'Cena bookingu: ' + ${order.room.price} + ' zł'"/>
+                        <td th:text="'Czy zapłacono? '"></td>
+                        <td th:if="${order.bookPaid}">
+                        <td th:text="Tak"/>
+                        </td>
+                        <td th:unless="${order.bookPaid}">
+                        <td th:text="Nie"/>
+                        </td>
+                        </p>
+                    </tr>
+                </table>
             </div>
         </div>
         <div class="col-md-2"></div>

@@ -14,11 +14,7 @@ public class RegistrationConfirmController {
 
     @GetMapping("/registrationConfirm")
     public String loginError(@RequestParam("token")String token) {
-
         clientService.activateUser(token);
-//        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-//        model.addAttribute("error", true);
-
         return "registrationConfirm";
     }
 

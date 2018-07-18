@@ -9,6 +9,59 @@ fieldset{
     vertical-align: center;
 }
 
+/*Header*/
+.head{
+
+}
+
+.header {
+    width: 100%;
+    background: white;
+    height: 128px;
+    position: fixed;
+}
+
+.logo{
+    height: auto;
+    width: auto;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.menu-wrapper{
+}
+
+.menu-desktop {
+    display: inline-flex;
+}
+
+.children{
+    padding-right: 25px;
+}
+
+/*Footer*/
+.footer {
+    background: white;
+    height: 128px;
+}
+
+.logoutButton {
+    background-color: #f44336;
+    color: white;
+    margin-left: 550px;
+    height: 60px;
+    width: 120px;
+}
+
+.logoutButton:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #f44336;
+}
+
 /*Body*/
 body {
     background-image: url(../img/Snow.jpg);
@@ -16,6 +69,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.main{
+    margin-top: 128px;
+    min-height: 1280px;
 }
 
 .text {
@@ -50,67 +108,7 @@ h1 {
     text-align: center;
 }
 
-/*Header*/
-.head{
-    /*display: inline-block;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-}
 
-.header {
-    background: white;
-    height: 128px;
-}
-
-.logo{
-    height: auto;
-    width: auto;
-    margin: auto;
-}
-
-ul {
-    list-style: none;
-}
-
-.menu-wrapper{
-    height: 100%;
-}
-
-.menu-desktop {
-    width: 100%;
-    height: 100%;
-    display: inline-flex;
-}
-
-.children{
-    padding-right: 25px;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.main{
-    min-height: 605px;
-}
-
-/*Footer*/
-.footer {
-    background: white;
-    height: 128px;
-}
-
-.logoutButton {
-    background-color: #f44336;
-    color: white;
-    margin-left: 550px;
-    height: 60px;
-    width: 120px;
-}
-
-.logoutButton:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid #f44336;
-}
 
 
 

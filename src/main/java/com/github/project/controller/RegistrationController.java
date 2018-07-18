@@ -25,22 +25,10 @@ public class RegistrationController {
         return "registration";
     }
 
-    //    @PostMapping(path = "/registration")
-//    @ResponseBody
-//    public ResponseEntity<ClientDTO> createClient(ClientDTO clientDTO) {
-//        try {
-//            return new ResponseEntity<>(new ClientDTO(clientService.createClient(clientDTO)), HttpStatus.CREATED);
-//        } catch (ValidationException e) {
-//            HttpHeaders headers = new HttpHeaders();
-//            headers.add("Location", "/registration-error");
-//            return new ResponseEntity<>(headers, HttpStatus.FOUND);
-//        }
-//    }
     @PostMapping(path = "/registration")
     public String createClient(ClientDTO clientDTO, Model model) {
         try {
             Client client = clientService.createClient(clientDTO);
-//            UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
             confirmRegistration(new ClientDTO(client), client.getConfirmationToken());
             return "login";
@@ -53,7 +41,6 @@ public class RegistrationController {
 
     @GetMapping("/registration-error")
     public String loginError(Model model) {
-//        String username = SecurityContextHolder.getContext().getAuthentication().getName();
         model.addAttribute("error", true);
         return "registration";
     }
@@ -68,7 +55,8 @@ public class RegistrationController {
         SimpleMailMessage email = new SimpleMailMessage();
         email.setTo(recipientAddress);
         email.setSubject(subject);
-        email.setText("http://localhost:8080" + confirmationUrl);
+        email.setText("https://practice-app-ski-booking.herokuapp.com" + confirmationUrl);
+        //email.setText("http://localhost:8080" + confirmationUrl);
         mailSender.send(email);
     }
 
